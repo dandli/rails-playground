@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :set_categories, only: [:show, :edit, :update, :new, :destroy]
+  before_action :set_categories, only: [:show, :edit, :update, :new, :destroy, :index]
 
   # GET /products
   # GET /products.json
@@ -60,6 +60,13 @@ class ProductsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def filter_products
+    @products = Product.where(category_id: params[:category_id].to_i)
+    respond_to do |format|
+      format.js {}
     end
   end
 
