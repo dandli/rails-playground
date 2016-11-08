@@ -1,0 +1,43 @@
+    1  cd vagrant
+    2  ls
+    3  cd Vagrant
+    4  cd /vagrant
+    5  vim ~/.bashrc
+    6  sudo apt update 
+    7  sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
+    8  sudo apt-get install libgdbm-dev libncurses5-dev automake libtool bison libffi-dev
+    9  gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+   10  curl -sSL https://get.rvm.io | bash -s stable
+   11  source ~/.rvm/scripts/rvm
+   12  rvm install 2.3.1
+   13  rvm use 2.3.1 --default
+   14  ruby -v
+   15  gem install bundler
+   16  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
+   17  sudo apt-get install -y apt-transport-https ca-certificates
+   18  sudo sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger xenial main > /etc/apt/sources.list.d/passenger.list'
+   19  sudo apt-get update
+   20  sudo apt-get install -y nginx-extras passenger
+   21  sudo service nginx start
+   22  cat /vagrant/Vagrantfile
+   23  sudo vim /etc/nginx/nginx.conf
+   24  sudo apt-get install mysql-server mysql-client libmysqlclient-dev
+   25  mysql -u root -p
+   26  gem install rails
+   27  rails -v
+   28  rails new . -d mysql
+   29  ls
+   30  echo Vagrantfile >> .gitignore
+   31  echo ubuntu-xenial-16.04-cloudimg-console.log >> .gitignore 
+   32  vom config/database.yml 
+   33  vim config/database.yml 
+   34  ls bin
+   35  vim gemfile
+   36  vim Gemfile.lock 
+   37  vim Gemfile
+   38  bundle install
+   39  rake db:create
+   40  sudo vim /etc/nginx/sites-enabled/default
+   41  sudo service nginx reload
+   42  sudo service nginx reload
+   43  history &> history.txt
