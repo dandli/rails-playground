@@ -1,19 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+ <div class="row">
+   <div class="col-sm-12">
+    <p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
+    <h1>Products</h1>
+    <%= select_tag(:category, options_for_select(@categories), class:"form-control") %>
+    </div>
 
-<%= select_tag(:category, options_for_select(@categories)) %>
+  </div>
 
-<div id="products_list">
+  <hr>
 
+  <div class="row" id="products_list">
+    <div class="col-sm-12">
+    <%= render "products_list", products: @products %>
+  </div>
+  </div>
 
-<%= render "products_list", products: @products %>
-
+  <div class="row">
+    <div class="col-sm-12">
+    <%= link_to 'New Product', new_product_path, class: "btn btn-success" %>
+  </div>
+  </div>
 </div>
-
-<br>
-
-<%= link_to 'New Product', new_product_path %>
 
 <script>
   $("#category").on("change", function(e){
