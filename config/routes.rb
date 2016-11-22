@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "home#index"
   get "/products/filter_products", to: "products#filter_products"
   resources :categories
   resources :products
